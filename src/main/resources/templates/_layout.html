@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html xmlns:layout="http://www.thymeleaf.org" lang="en">
+    <head>
+        <title>Welcome to PAW SpringBoot</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse"
+                         id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <!-- Home -->
+                            <li class="nav-item" th:class="${activePage == 
+                                'home'} ? 'nav-item active' : 'nav-item'">
+                                <a class="nav-link" href="/home"
+                                   th:style="${activePage == 'home'} ? 
+                                   'font-weight: bold;' : ''">Home</a>
+                            </li>
+                            <!-- Barang -->
+                            <li class="nav-item" th:class="${activePage == 
+                                'Barang'} ? 'nav-item active' : 'nav-item'">
+                                <a class="nav-link" href="/barang"
+                                   th:style="${activePage == 'Barang'} ? 
+                                   'font-weight: bold;' : ''">Barang</a>
+                            </li>
+                            <!-- Transaksi -->
+                            <li class="nav-item" th:class="${activePage == 
+                                'Transaksi'} ? 'nav-item active' : 'nav-item'">
+                                <a class="nav-link" href="/transaksi"
+                                   th:style="${activePage == 'Transaksi'} ? 
+                                   'font-weight: bold;' : ''">Transaksi</a>
+                            </li>
+                            <!-- Laporan -->
+                            <li class="nav-item" th:class="${activePage == 
+                                'Laporan'} ? 'nav-item active' : 'nav-item'">
+                                <a class="nav-link" href="/laporan"
+                                   th:style="${activePage == 'Laporan'} ? 
+                                   'font-weight: bold;' : ''">Laporan</a>
+                            </li>
+                        </ul>
+                        <form th:action="@{/logout}" method="post">
+                            <input type="submit" class="btn btn-dark" value="Logout" />
+                        </form>
+                    </div>
+                </div>
+            </nav>
+            <div layout:fragment="content"></div>
+        </header>
+    </body>
+</html>
