@@ -1,60 +1,59 @@
 
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initialscale=1">
-    <title>Add Barang</title>
-</head>
-<body>
-    <div layout:fragment="content">
-    <main>
-        <div class="album py-5">
-            <div class="container">
-                <div class="card">
-                    <div class="card-header">
-                        <h4><i class="fas fa-barang"></i>Tambah Barang</h4>
-                    </div>
-                    <div class="card-body container">
-                    <div class="col-lg-12">
-                    <!-- binding object -->
-                    <form method="get" th:object="${Barang}"th:action="@{/addBarang}" class="mb-5">
-                    <div class="row mb-4">
-                        <h4 for="inputEmail3"class="col-sm-2 col-form-label">Id Barang</h4>
-                        <div class="col-sm-10">
-                            <input class="form-control"type="number" th:field="*{id}">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initialscale=1">
+        <title>Add Barang</title>
+    </head>
+    <body>
+        <div layout:fragment="content">
+            <main>
+                <div class="album py-5">
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4><i class="fas fa-barang"></i>Tambah Barang</h4>
+                            </div>
+                            <div class="card-body container">
+                                <div class="col-lg-12">
+                                    <!-- binding object -->
+                                    <form method="POST" th:object="${Barang}"th:action="@{/barang/save}" class="mb-5">
+                                        <div class="row mb-4">
+                                            <h4 for="inputEmail3"class="col-sm-2 col-form-label">Id Barang</h4>
+                                            <div class="col-sm-10">
+                                                <input class="form-control"type="number" th:field="${Barang.id}">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4">
+                                            <h4 for="inputEmail3"class="col-sm-2 col-form-label">Nama Barang</h4>
+                                            <div class="col-sm-10">
+                                                <input class="form-control"type="text" th:field="${Barang.nama}">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4">
+                                            <h4 for="inputEmail3"class="col-sm-2 col-form-label">Harga Barang</h4>
+                                            <div class="col-sm-10">
+                                                <input class="form-control"type="number" th:field="${Barang.harga}">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4">
+                                            <h4 for="inputEmail3"class="col-sm-2 col-form-label">Stok</h4>
+                                            <div class="col-sm-10">
+                                                <input class="form-control"type="number" th:field="${Barang.stok}">
+                                            </div>
+                                        </div>
+                                        <input type="hidden"th:field="*{id}">
+                                        <button class="btn btn-primary mr-1 btn-submit" type="submit">Tambah</button>
+                                        <a href="/barang/list" class="btn btn danger my-3"> BATAL </a>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="row mb-4">
-                        <h4 for="inputEmail3"class="col-sm-2 col-form-label">Nama Barang</h4>
-                        <div class="col-sm-10">
-                            <input class="form-control"type="text" th:field="*{nama}">
-                        </div>
-                    </div>
-                    <div class="row mb-4">
-                        <h4 for="inputEmail3"class="col-sm-2 col-form-label">Harga Barang</h4>
-                        <div class="col-sm-10">
-                            <input class="form-control"type="number" th:field="*{harga}">
-                        </div>
-                    </div>
-                    <div class="row mb-4">
-                        <h4 for="inputEmail3"class="col-sm-2 col-form-label">Stok</h4>
-                        <div class="col-sm-10">
-                            <input class="form-control"type="number" th:field="*{stok}">
-                        </div>
-                    </div>
-                        <input type="hidden"th:field="*{id}">
-                        <button class="btn btn-primary mr-1 btn-submit" type="submit"><i
-                                class="fa fa-paper plane"></i>TAMBAH</button>
-                        <a href="/barang" class="btn btn danger my-3"> BATAL </a>
-                    </form>
                 </div>
-            </div>
+            </main>
         </div>
-    </div>
-</div>
-</main>
-</div>
-</body>
+    </body>
 </html>
