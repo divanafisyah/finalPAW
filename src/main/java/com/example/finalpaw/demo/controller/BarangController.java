@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author DIVA
  */
 @Controller
-//@RequestMapping("/barang")
+@RequestMapping("/barang")
 public class BarangController {
 
     @Autowired
@@ -60,7 +60,7 @@ public class BarangController {
     @PostMapping("/save")
     public String save(Barang barang, Model model) {
         barangService.addBarang(barang);
-        return "redirect:/barang";
+        return "redirect:/barang/list";
     }
 
     @GetMapping("/delete/{id}")

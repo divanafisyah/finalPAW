@@ -7,7 +7,6 @@
     <title>Halaman Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
     <style>
         body {
             display: flex;
@@ -90,18 +89,17 @@
         <nav class="navbar-button">
             <!-- Menambahkan kelas warna yang sudah ditentukan -->
             <a class="btn btn-primary btn-primary-custom" th:action href="/laporan">Laporan</a>
-            <a class="btn btn-secondary btn-secondary-custom" href="/transaksi">Transaksi</a>
+            <a class="btn btn-secondary btn-secondary-custom" href="/transaksi/list">Transaksi</a>
             <a class="btn btn-success btn-success-custom" href="/barang/list">Barang</a>
         </nav>
     </div>
     <div class="login-register-buttons">
         <a class="btn btn-primary btn-login" href="/login">Login</a>
-        <a class="btn btn-secondary btn-register" th: href="/register">Register</a>
+        <a class="btn btn-secondary btn-register" th:action href="/register">Register</a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 </body>
-
 </html>
